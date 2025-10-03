@@ -8,4 +8,4 @@ media:
     label: Images
     input: public/imgs
     output: /public/imgs
-    extensions: [ png, webp ]
+    extensions: [ png, webp, jpg ]
