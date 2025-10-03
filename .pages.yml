@@ -1,0 +1,11 @@
+media:
+  - name: docs
+    label: Docs
+    input: docs
+    output: /docs
+    categories: [ document ]
+  - name: images # Note: 'name' key is required here
+    label: Images
+    input: imgs
+    output: /imgs
+    extensions: [ png, webp ]
