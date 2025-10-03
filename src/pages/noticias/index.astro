@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const allNoticias = await getCollection('noticias');
+---
+
+<Layout title="Noticias - FCI">
+  <div class="container mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold mb-8">Noticias</h1>
+    <div class="grid gap-8">
+      {allNoticias.map(noticia => (
+        <a href={`/noticias/${noticia.slug}`} class="block bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h2 class="text-2xl font-bold text-primary mb-2">{noticia.data.titulo}</h2>
+          <p class="text-gray-600">{noticia.data.subtitulo}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .text-primary {
+    color: #32a470;
+  }
+</style>
